@@ -30,7 +30,7 @@ namespace ExamenSIM_Villa
             if (((e.KeyChar) < 48 && e.KeyChar != 8) || e.KeyChar > 57)
             {
                 MessageBox.Show("Sólo se permiten Números");
-                e.Handled = true;
+                e.Handled = true; 
             }
         }
 
