@@ -142,6 +142,8 @@
             // 
             // grilla_1
             // 
+            this.grilla_1.AllowUserToAddRows = false;
+            this.grilla_1.AllowUserToDeleteRows = false;
             this.grilla_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nAuto,
@@ -155,6 +157,7 @@
             this.costAcum});
             this.grilla_1.Location = new System.Drawing.Point(20, 51);
             this.grilla_1.Name = "grilla_1";
+            this.grilla_1.ReadOnly = true;
             this.grilla_1.RowHeadersVisible = false;
             this.grilla_1.Size = new System.Drawing.Size(905, 128);
             this.grilla_1.TabIndex = 10;
@@ -475,6 +478,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Final SIM - ej 318";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.grp_politica_1.ResumeLayout(false);
             this.grp_politica_1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_1)).EndInit();
