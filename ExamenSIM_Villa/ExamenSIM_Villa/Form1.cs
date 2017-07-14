@@ -129,7 +129,7 @@ namespace ExamenSIM_Villa
 
             // ACA PERMITE PONER COMAS, PERO PODES PONER MAS DE UNA ¨OJO¨
 
-            if (((e.KeyChar) < 48 && e.KeyChar != 8 && e.KeyChar != 46) || e.KeyChar > 57)
+            if (((e.KeyChar) < 48 && e.KeyChar != 8 && e.KeyChar != 44) || e.KeyChar > 57)
             {
                 MessageBox.Show("Sólo se permiten Números");
                 e.Handled = true;
