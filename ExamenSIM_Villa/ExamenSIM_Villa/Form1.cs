@@ -197,14 +197,41 @@ namespace ExamenSIM_Villa
         private void txt_hasta_TextChanged(object sender, EventArgs e)
         {
 
-            if (txt_cant_prod.Text !=""&& int.Parse(txt_hasta.Text) >=5 )
+            if (int.Parse(txt_hasta.Text) <= int.Parse(txt_cant_prod.Text))
             {
-                int res = int.Parse(txt_hasta.Text) - 5;
-                txt_desde.Text = res.ToString(); 
+                if (txt_cant_prod.Text != "" && int.Parse(txt_hasta.Text) > 5)
+                {
+                    int res = int.Parse(txt_hasta.Text) - 5;
+                    txt_desde.Text = res.ToString();
+                }
+                else
+                {
+                    txt_desde.Text = "1";
+                } 
             }
-            else 
+            else
             {
-                txt_desde.Text = "";
+                MessageBox.Show("no puede ser mayor que la cantidad a producir");
+                txt_hasta.Text = txt_cant_prod.Text;
+
+            }
+        }
+
+        private void txt_hasta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar) < 48 && e.KeyChar != 8) || e.KeyChar > 57)
+            {
+                MessageBox.Show("Sólo se permiten Números");
+                e.Handled = true;
+            }
+        }
+
+        private void txt_desde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar) < 48 && e.KeyChar != 8) || e.KeyChar > 57)
+            {
+                MessageBox.Show("Sólo se permiten Números");
+                e.Handled = true;
             }
         }
     }

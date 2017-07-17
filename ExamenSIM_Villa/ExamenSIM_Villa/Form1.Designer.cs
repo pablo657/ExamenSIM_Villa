@@ -473,7 +473,8 @@
             this.txt_desde.Name = "txt_desde";
             this.txt_desde.Size = new System.Drawing.Size(47, 20);
             this.txt_desde.TabIndex = 12;
-            this.txt_desde.Text = "15";
+            this.txt_desde.Text = "115";
+            this.txt_desde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_desde_KeyPress);
             // 
             // label7
             // 
@@ -492,6 +493,7 @@
             this.txt_hasta.TabIndex = 10;
             this.txt_hasta.Text = "120";
             this.txt_hasta.TextChanged += new System.EventHandler(this.txt_hasta_TextChanged);
+            this.txt_hasta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_hasta_KeyPress);
             // 
             // label8
             // 
