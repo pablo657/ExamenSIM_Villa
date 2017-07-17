@@ -122,6 +122,10 @@ namespace ExamenSIM_Villa
                 e.Handled = true;
                 
             }
+            if (txt_cant_prod.Text == "0")
+            {
+                MessageBox.Show("Debe ser mayor a 0");
+            }
         }
 
         private void txt_Costo_reparacion_KeyPress(object sender, KeyPressEventArgs e)
@@ -141,7 +145,7 @@ namespace ExamenSIM_Villa
 
             // ACA PERMITE PONER COMAS, PERO PODES PONER MAS DE UNA ¨OJO¨
 
-            //if (((e.KeyChar) < 48 && e.KeyChar != 8 && e.KeyChar != 44) || e.KeyChar > 57)
+            if (((e.KeyChar) < 48 && e.KeyChar != 8 && e.KeyChar != 44) || e.KeyChar > 57)
             {
                 MessageBox.Show("Sólo se permiten Números");
                 e.Handled = true;
