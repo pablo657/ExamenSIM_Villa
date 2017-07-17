@@ -13,7 +13,7 @@ namespace ExamenSIM_Villa
 
     public partial class Form1 : Form
     {
-        private int cantidadAProducir;
+        private long cantidadAProducir;
         private double costoReparacion;
         private int aniosGarantia;
         private int vidaPol1;
@@ -32,7 +32,7 @@ namespace ExamenSIM_Villa
         {
            
             validar();
-            cantidadAProducir = int.Parse( txt_cant_prod.Text);
+            cantidadAProducir = long.Parse( txt_cant_prod.Text);
             costoArreglar  = double.Parse(txt_Costo_reparacion.Text);
             aniosGarantia = int.Parse(txt_garantia.Text);
             vidaPol1 = int.Parse(txt_prom_vida_pol_1.Text);
@@ -45,24 +45,26 @@ namespace ExamenSIM_Villa
 
 
         }
-        public void Simular(DataGridView grilla, int cantProd, double costoArreglar,int aniosGarantia, int promVida)
+        public void Simular(DataGridView grilla, long cantProd, double costoArreglar,int aniosGarantia, int promVida)
         {
-            int cont = 0;
-            double costoReparacion;
+            long  cont = 0;
+            double costoReparacion =0.00;
             double costoProducir= CalculoCosto.calcularCosto(promVida);
             double tiempoFalla;
             Random  rdn = new Random ();
             double randomActual;
             double costoTotal;
-            double costoAcumulado;
+            double costoAcumulado=0.00;
            
+
             while (cont < cantProd)
             {
-                cont++;
+                    cont++;
                 String tieneGarantia = "";
                 randomActual= rdn.NextDouble();
                 tiempoFalla = Distribuciones.Exponencial(promVida, randomActual);
-                int i = grilla.Rows.Add();
+                
+
                 if (tiempoFalla <= aniosGarantia)
                 {
                     tieneGarantia = "SI";
@@ -71,26 +73,35 @@ namespace ExamenSIM_Villa
                 else
                 {
                     tieneGarantia = "NO";
-                    costoReparacion = 0;
+                    costoReparacion = 0.00;
                 }
                 costoTotal = costoProducir + costoReparacion;
-                if (i == 0)
+                costoAcumulado =Math.Round(costoAcumulado,1) + Math.Round(costoTotal, 1);
+
+                //if (i == 0)
+                //{
+                //    costoAcumulado = costoTotal;
+                //}
+                //else
+                //{
+                //    costoAcumulado+= costoTotal;
+                //}
+
+
+                if (cont >= int.Parse(txt_desde.Text)  && cont <= int.Parse(txt_hasta.Text))
                 {
-                    costoAcumulado = costoTotal;
+                    int i = grilla.Rows.Add();
+                    grilla.Rows[i].Cells[0].Value = cont;
+                    grilla.Rows[i].Cells[1].Value = randomActual;
+                    grilla.Rows[i].Cells[2].Value = tiempoFalla;
+                    grilla.Rows[i].Cells[3].Value = aniosGarantia;
+                    grilla.Rows[i].Cells[4].Value = tieneGarantia;
+                    grilla.Rows[i].Cells[5].Value = costoReparacion;
+                    grilla.Rows[i].Cells[6].Value = costoProducir;
+                    grilla.Rows[i].Cells[7].Value = costoTotal;
+                    grilla.Rows[i].Cells[8].Value = costoAcumulado; 
                 }
-                else
-                {
-                    costoAcumulado= double.Parse( grilla.Rows[i-1].Cells[8].Value.ToString()) + costoTotal ;
-                }
-                grilla.Rows[i].Cells[0].Value =cont ;
-                grilla.Rows[i].Cells[1].Value = randomActual;
-                grilla.Rows[i].Cells[2].Value = tiempoFalla;
-                grilla.Rows[i].Cells[3].Value = aniosGarantia ;
-                grilla.Rows[i].Cells[4].Value = tieneGarantia;
-                grilla.Rows[i].Cells[5].Value = costoReparacion  ;
-                grilla.Rows[i].Cells[6].Value = costoProducir;
-                grilla.Rows[i].Cells[7].Value = costoTotal ;
-                grilla.Rows[i].Cells[8].Value = costoAcumulado ;
+                
             }
         }
         public void validar()
@@ -108,7 +119,8 @@ namespace ExamenSIM_Villa
             if (((e.KeyChar) < 48 && e.KeyChar != 8) || e.KeyChar > 57)
             {
                 MessageBox.Show("Sólo se permiten Números");
-                e.Handled = true; 
+                e.Handled = true;
+                
             }
         }
 
@@ -129,7 +141,7 @@ namespace ExamenSIM_Villa
 
             // ACA PERMITE PONER COMAS, PERO PODES PONER MAS DE UNA ¨OJO¨
 
-            if (((e.KeyChar) < 48 && e.KeyChar != 8 && e.KeyChar != 44) || e.KeyChar > 57)
+            //if (((e.KeyChar) < 48 && e.KeyChar != 8 && e.KeyChar != 44) || e.KeyChar > 57)
             {
                 MessageBox.Show("Sólo se permiten Números");
                 e.Handled = true;
@@ -175,6 +187,25 @@ namespace ExamenSIM_Villa
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_cant_prod_TextChanged(object sender, EventArgs e)
+        {
+            txt_hasta.Text = txt_cant_prod.Text;
+        }
+
+        private void txt_hasta_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txt_cant_prod.Text !=""&& int.Parse(txt_hasta.Text) >=5 )
+            {
+                int res = int.Parse(txt_hasta.Text) - 5;
+                txt_desde.Text = res.ToString(); 
+            }
+            else 
+            {
+                txt_desde.Text = "";
+            }
         }
     }
 }
