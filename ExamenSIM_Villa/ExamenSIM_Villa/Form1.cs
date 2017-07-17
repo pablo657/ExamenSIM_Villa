@@ -122,7 +122,7 @@ namespace ExamenSIM_Villa
                 e.Handled = true;
                 
             }
-            if (txt_cant_prod.Text == "0")
+            if (txt_cant_prod.Text == "0" )
             {
                 MessageBox.Show("Debe ser mayor a 0");
             }
@@ -201,23 +201,32 @@ namespace ExamenSIM_Villa
         private void txt_hasta_TextChanged(object sender, EventArgs e)
         {
 
-            if (int.Parse(txt_hasta.Text) <= int.Parse(txt_cant_prod.Text))
+            if (txt_cant_prod.Text != "")
             {
-                if (txt_cant_prod.Text != "" && int.Parse(txt_hasta.Text) > 5)
+                if (int.Parse(txt_hasta.Text) <= int.Parse(txt_cant_prod.Text))
                 {
-                    int res = int.Parse(txt_hasta.Text) - 5;
-                    txt_desde.Text = res.ToString();
+                    if (txt_cant_prod.Text != "" && int.Parse(txt_hasta.Text) > 5)
+                    {
+                        int res = int.Parse(txt_hasta.Text) - 5;
+                        txt_desde.Text = res.ToString();
+                    }
+                    else
+                    {
+                        txt_desde.Text = "1";
+                    }
                 }
                 else
                 {
-                    txt_desde.Text = "1";
-                } 
+                    MessageBox.Show("no puede ser mayor que la cantidad a producir");
+                    txt_hasta.Text = txt_cant_prod.Text;
+
+                }
             }
             else
             {
-                MessageBox.Show("no puede ser mayor que la cantidad a producir");
-                txt_hasta.Text = txt_cant_prod.Text;
-
+                MessageBox.Show("ingrese valor");
+                txt_desde.Text = "";
+                txt_hasta.Text = "";
             }
         }
 
