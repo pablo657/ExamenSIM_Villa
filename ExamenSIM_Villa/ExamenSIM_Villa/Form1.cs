@@ -221,7 +221,9 @@ namespace ExamenSIM_Villa
                     txt_hasta.Text = txt_cant_prod.Text;
 
                 }
+
             }
+           
             else
             {
                 MessageBox.Show("ingrese valor");
