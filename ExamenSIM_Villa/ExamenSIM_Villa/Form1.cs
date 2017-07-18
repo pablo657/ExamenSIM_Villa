@@ -106,16 +106,7 @@ namespace ExamenSIM_Villa
                 costoTotal = costoProducir + costoReparacion;
                 costoAcumulado =Math.Round(costoAcumulado,1) + Math.Round(costoTotal, 1);
 
-                //if (i == 0)
-                //{
-                //    costoAcumulado = costoTotal;
-                //}
-                //else
-                //{
-                //    costoAcumulado+= costoTotal;
-                //}
-
-
+               
                 if (cont >= int.Parse(txt_desde.Text)  && cont <= int.Parse(txt_hasta.Text))
                 {
                     int i = grilla.Rows.Add();
