@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExamenSIM_Villa
@@ -22,7 +24,10 @@ namespace ExamenSIM_Villa
         //private double costoProducir;
         private double costoArreglar;
         //private double costoTotal;
-        
+        double costo_pol_1;
+        double costo_pol_2;
+        double costo_pol_3;
+
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +35,7 @@ namespace ExamenSIM_Villa
 
         private void btn_simular_Click(object sender, EventArgs e)
         {
-           
+          
             validar();
             cantidadAProducir = long.Parse( txt_cant_prod.Text);
             costoArreglar  = double.Parse(txt_Costo_reparacion.Text);
@@ -38,13 +43,36 @@ namespace ExamenSIM_Villa
             vidaPol1 = int.Parse(txt_prom_vida_pol_1.Text);
             vidaPol2 = int.Parse(txt_prom_vida_pol_2.Text);
             vidaPol3 = int.Parse(txt_prom_vida_pol_3.Text);
-            
+          
             Simular(grilla_1,cantidadAProducir,costoArreglar,aniosGarantia,vidaPol1 );
             Simular(grilla_2, cantidadAProducir, costoArreglar, aniosGarantia, vidaPol2);
             Simular(grilla_3, cantidadAProducir, costoArreglar, aniosGarantia, vidaPol3);
 
+            btn_simular.Enabled = false;
+            ObtenerMejorPolitica();
+          
 
         }
+        public void ObtenerMejorPolitica()
+        {
+            if (costo_pol_1 < costo_pol_2 && costo_pol_1 < costo_pol_3)
+            {
+                lbl_mejor_politica.Text = "1";
+                txt_Resultado.Text = costo_pol_1.ToString();
+            }
+            if (costo_pol_2 < costo_pol_1 && costo_pol_2 < costo_pol_3)
+            {
+                lbl_mejor_politica.Text = "2";
+                txt_Resultado.Text = costo_pol_2.ToString();
+            }
+            if (costo_pol_3 < costo_pol_2 && costo_pol_3 < costo_pol_1)
+            {
+                lbl_mejor_politica.Text = "3";
+                txt_Resultado.Text = costo_pol_3.ToString();
+            }
+        }
+      
+       
         public void Simular(DataGridView grilla, long cantProd, double costoArreglar,int aniosGarantia, int promVida)
         {
             long  cont = 0;
@@ -101,7 +129,18 @@ namespace ExamenSIM_Villa
                     grilla.Rows[i].Cells[7].Value = costoTotal;
                     grilla.Rows[i].Cells[8].Value = costoAcumulado; 
                 }
-                
+                if (grilla == grilla_1)
+                {
+                    costo_pol_1 = costoAcumulado;
+                }
+                if (grilla == grilla_2)
+                {
+                    costo_pol_2 = costoAcumulado;
+                }
+                if (grilla == grilla_3)
+                {
+                    costo_pol_3 = costoAcumulado;
+                }
             }
         }
         public void validar()
@@ -248,6 +287,28 @@ namespace ExamenSIM_Villa
                 MessageBox.Show("Sólo se permiten Números");
                 e.Handled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+        public void Limpiar()
+        {
+            txt_cant_prod.Text = "120";
+            txt_Costo_reparacion.Text = "5";
+            txt_garantia.Text = "5";
+            txt_desde.Text = "115";
+            txt_hasta.Text = "120";
+            txt_prom_vida_pol_1.Text = "4";
+            txt_prom_vida_pol_2.Text = "5";
+            txt_prom_vida_pol_3.Text = "6";
+            grilla_1.Rows.Clear();
+            grilla_2.Rows.Clear();
+            grilla_3.Rows.Clear();
+            lbl_mejor_politica.Text = "";
+            txt_Resultado.Text = "";
+            btn_simular.Enabled = true;
         }
     }
 }

@@ -79,12 +79,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_hasta = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_mejor_politica = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_Resultado = new System.Windows.Forms.TextBox();
             this.grp_politica_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_3)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -254,6 +261,8 @@
             // 
             // grilla_2
             // 
+            this.grilla_2.AllowUserToAddRows = false;
+            this.grilla_2.AllowUserToDeleteRows = false;
             this.grilla_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -267,6 +276,7 @@
             this.dataGridViewTextBoxColumn9});
             this.grilla_2.Location = new System.Drawing.Point(20, 45);
             this.grilla_2.Name = "grilla_2";
+            this.grilla_2.ReadOnly = true;
             this.grilla_2.RowHeadersVisible = false;
             this.grilla_2.Size = new System.Drawing.Size(905, 128);
             this.grilla_2.TabIndex = 12;
@@ -357,6 +367,8 @@
             // 
             // grilla_3
             // 
+            this.grilla_3.AllowUserToAddRows = false;
+            this.grilla_3.AllowUserToDeleteRows = false;
             this.grilla_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
@@ -370,6 +382,7 @@
             this.dataGridViewTextBoxColumn18});
             this.grilla_3.Location = new System.Drawing.Point(20, 39);
             this.grilla_3.Name = "grilla_3";
+            this.grilla_3.ReadOnly = true;
             this.grilla_3.RowHeadersVisible = false;
             this.grilla_3.Size = new System.Drawing.Size(905, 128);
             this.grilla_3.TabIndex = 13;
@@ -450,7 +463,7 @@
             // 
             this.btn_simular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_simular.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_simular.Location = new System.Drawing.Point(750, 661);
+            this.btn_simular.Location = new System.Drawing.Point(422, 55);
             this.btn_simular.Name = "btn_simular";
             this.btn_simular.Size = new System.Drawing.Size(75, 23);
             this.btn_simular.TabIndex = 8;
@@ -504,16 +517,81 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Mostrar fila hasta:";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(503, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt_Resultado);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.lbl_mejor_politica);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Location = new System.Drawing.Point(589, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(380, 83);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Resultado";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(7, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(188, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "La Mejor política es la:";
+            // 
+            // lbl_mejor_politica
+            // 
+            this.lbl_mejor_politica.AutoSize = true;
+            this.lbl_mejor_politica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mejor_politica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbl_mejor_politica.Location = new System.Drawing.Point(201, 17);
+            this.lbl_mejor_politica.Name = "lbl_mejor_politica";
+            this.lbl_mejor_politica.Size = new System.Drawing.Size(0, 24);
+            this.lbl_mejor_politica.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(212, 20);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Costo Total de la política:";
+            // 
+            // txt_Resultado
+            // 
+            this.txt_Resultado.Enabled = false;
+            this.txt_Resultado.Location = new System.Drawing.Point(225, 47);
+            this.txt_Resultado.Name = "txt_Resultado";
+            this.txt_Resultado.Size = new System.Drawing.Size(100, 20);
+            this.txt_Resultado.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 696);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_desde);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_hasta);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_simular);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grp_politica_1);
@@ -535,6 +613,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_3)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -593,6 +673,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_hasta;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txt_Resultado;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_mejor_politica;
+        private System.Windows.Forms.Label label9;
     }
 }
 
