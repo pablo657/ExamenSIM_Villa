@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,12 +46,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_cant_prod = new System.Windows.Forms.TextBox();
@@ -54,14 +54,41 @@
             this.label3 = new System.Windows.Forms.Label();
             this.grp_politica_1 = new System.Windows.Forms.GroupBox();
             this.grilla_1 = new System.Windows.Forms.DataGridView();
+            this.nAuto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rdn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tFalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tGarantia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isGarantia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costArreglo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costAcum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_prom_vida_pol_1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grilla_2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_prom_vida_pol_2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grilla_3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_prom_vida_pol_3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_simular = new System.Windows.Forms.Button();
@@ -72,37 +99,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lbl_mejor_politica = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.txt_Resultado = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAuto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rdn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tFalla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tGarantia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isGarantia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costArreglo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costAcum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_mejor_politica = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btn_salir = new System.Windows.Forms.Button();
             this.grp_politica_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -193,6 +194,78 @@
             this.grilla_1.Size = new System.Drawing.Size(905, 141);
             this.grilla_1.TabIndex = 10;
             // 
+            // nAuto
+            // 
+            this.nAuto.HeaderText = "Nro de Auto";
+            this.nAuto.Name = "nAuto";
+            this.nAuto.ReadOnly = true;
+            // 
+            // rdn
+            // 
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.rdn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.rdn.HeaderText = "Random";
+            this.rdn.Name = "rdn";
+            this.rdn.ReadOnly = true;
+            // 
+            // tFalla
+            // 
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.tFalla.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tFalla.HeaderText = "Tiempo de falla (años)";
+            this.tFalla.Name = "tFalla";
+            this.tFalla.ReadOnly = true;
+            // 
+            // tGarantia
+            // 
+            this.tGarantia.HeaderText = "Garantia (años)";
+            this.tGarantia.Name = "tGarantia";
+            this.tGarantia.ReadOnly = true;
+            // 
+            // isGarantia
+            // 
+            this.isGarantia.HeaderText = "Está en Garantia?";
+            this.isGarantia.Name = "isGarantia";
+            this.isGarantia.ReadOnly = true;
+            // 
+            // costArreglo
+            // 
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.costArreglo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.costArreglo.HeaderText = "Costo de Arreglo ($)";
+            this.costArreglo.Name = "costArreglo";
+            this.costArreglo.ReadOnly = true;
+            // 
+            // costProd
+            // 
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.costProd.DefaultCellStyle = dataGridViewCellStyle4;
+            this.costProd.HeaderText = "Costo Producción ($)";
+            this.costProd.Name = "costProd";
+            this.costProd.ReadOnly = true;
+            // 
+            // costTotal
+            // 
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.costTotal.DefaultCellStyle = dataGridViewCellStyle5;
+            this.costTotal.HeaderText = "Costo Total ($)";
+            this.costTotal.Name = "costTotal";
+            this.costTotal.ReadOnly = true;
+            // 
+            // costAcum
+            // 
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.costAcum.DefaultCellStyle = dataGridViewCellStyle6;
+            this.costAcum.HeaderText = "Costo Acumulado ($)";
+            this.costAcum.Name = "costAcum";
+            this.costAcum.ReadOnly = true;
+            // 
             // txt_prom_vida_pol_1
             // 
             this.txt_prom_vida_pol_1.Location = new System.Drawing.Point(150, 13);
@@ -245,6 +318,78 @@
             this.grilla_2.Size = new System.Drawing.Size(905, 141);
             this.grilla_2.TabIndex = 12;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nro de Auto";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Random";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tiempo de falla (años)";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Garantia (años)";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Está en Garantia?";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Costo de Arreglo ($)";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Costo Producción ($)";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Costo Total ($)";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Costo Acumulado ($)";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
             // txt_prom_vida_pol_2
             // 
             this.txt_prom_vida_pol_2.Location = new System.Drawing.Point(150, 13);
@@ -296,6 +441,78 @@
             this.grilla_3.RowHeadersVisible = false;
             this.grilla_3.Size = new System.Drawing.Size(905, 141);
             this.grilla_3.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Nro de Auto";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewTextBoxColumn11.HeaderText = "Random";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = null;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewTextBoxColumn12.HeaderText = "Tiempo de falla (años)";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Garantia (años)";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Está en Garantia?";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            dataGridViewCellStyle15.Format = "N2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewTextBoxColumn15.HeaderText = "Costo de Arreglo ($)";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            dataGridViewCellStyle16.Format = "N2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.dataGridViewTextBoxColumn16.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridViewTextBoxColumn16.HeaderText = "Costo Producción ($)";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            dataGridViewCellStyle17.Format = "N2";
+            dataGridViewCellStyle17.NullValue = null;
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridViewTextBoxColumn17.HeaderText = "Costo Total ($)";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = null;
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridViewTextBoxColumn18.HeaderText = "Costo Acumulado ($)";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
             // 
             // txt_prom_vida_pol_3
             // 
@@ -398,25 +615,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Resultado";
             // 
-            // label9
+            // txt_Resultado
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(188, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "La Mejor política es la:";
-            // 
-            // lbl_mejor_politica
-            // 
-            this.lbl_mejor_politica.AutoSize = true;
-            this.lbl_mejor_politica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mejor_politica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbl_mejor_politica.Location = new System.Drawing.Point(201, 17);
-            this.lbl_mejor_politica.Name = "lbl_mejor_politica";
-            this.lbl_mejor_politica.Size = new System.Drawing.Size(0, 24);
-            this.lbl_mejor_politica.TabIndex = 1;
+            this.txt_Resultado.Enabled = false;
+            this.txt_Resultado.Location = new System.Drawing.Point(225, 47);
+            this.txt_Resultado.Name = "txt_Resultado";
+            this.txt_Resultado.Size = new System.Drawing.Size(100, 20);
+            this.txt_Resultado.TabIndex = 3;
             // 
             // label10
             // 
@@ -428,235 +633,44 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Costo Total de la política:$";
             // 
-            // txt_Resultado
+            // lbl_mejor_politica
             // 
-            this.txt_Resultado.Enabled = false;
-            this.txt_Resultado.Location = new System.Drawing.Point(225, 47);
-            this.txt_Resultado.Name = "txt_Resultado";
-            this.txt_Resultado.Size = new System.Drawing.Size(100, 20);
-            this.txt_Resultado.TabIndex = 3;
+            this.lbl_mejor_politica.AutoSize = true;
+            this.lbl_mejor_politica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mejor_politica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbl_mejor_politica.Location = new System.Drawing.Point(201, 17);
+            this.lbl_mejor_politica.Name = "lbl_mejor_politica";
+            this.lbl_mejor_politica.Size = new System.Drawing.Size(0, 24);
+            this.lbl_mejor_politica.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
+            // label9
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nro de Auto";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(7, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(188, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "La Mejor política es la:";
             // 
-            // dataGridViewTextBoxColumn2
+            // btn_salir
             // 
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Random";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tiempo de falla (años)";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Garantia (años)";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Está en Garantia?";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Costo de Arreglo ($)";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Costo Producción ($)";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Costo Total ($)";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Costo Acumulado ($)";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Nro de Auto";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            dataGridViewCellStyle13.Format = "N2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewTextBoxColumn11.HeaderText = "Random";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridViewTextBoxColumn12.HeaderText = "Tiempo de falla (años)";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Garantia (años)";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Está en Garantia?";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            dataGridViewCellStyle15.Format = "N2";
-            dataGridViewCellStyle15.NullValue = null;
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridViewTextBoxColumn15.HeaderText = "Costo de Arreglo ($)";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            dataGridViewCellStyle16.Format = "N2";
-            dataGridViewCellStyle16.NullValue = null;
-            this.dataGridViewTextBoxColumn16.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridViewTextBoxColumn16.HeaderText = "Costo Producción ($)";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            dataGridViewCellStyle17.Format = "N2";
-            dataGridViewCellStyle17.NullValue = null;
-            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridViewTextBoxColumn17.HeaderText = "Costo Total ($)";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            dataGridViewCellStyle18.Format = "N2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridViewTextBoxColumn18.HeaderText = "Costo Acumulado ($)";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            // 
-            // nAuto
-            // 
-            this.nAuto.HeaderText = "Nro de Auto";
-            this.nAuto.Name = "nAuto";
-            this.nAuto.ReadOnly = true;
-            // 
-            // rdn
-            // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.rdn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.rdn.HeaderText = "Random";
-            this.rdn.Name = "rdn";
-            this.rdn.ReadOnly = true;
-            // 
-            // tFalla
-            // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.tFalla.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tFalla.HeaderText = "Tiempo de falla (años)";
-            this.tFalla.Name = "tFalla";
-            this.tFalla.ReadOnly = true;
-            // 
-            // tGarantia
-            // 
-            this.tGarantia.HeaderText = "Garantia (años)";
-            this.tGarantia.Name = "tGarantia";
-            this.tGarantia.ReadOnly = true;
-            // 
-            // isGarantia
-            // 
-            this.isGarantia.HeaderText = "Está en Garantia?";
-            this.isGarantia.Name = "isGarantia";
-            this.isGarantia.ReadOnly = true;
-            // 
-            // costArreglo
-            // 
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.costArreglo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.costArreglo.HeaderText = "Costo de Arreglo ($)";
-            this.costArreglo.Name = "costArreglo";
-            this.costArreglo.ReadOnly = true;
-            // 
-            // costProd
-            // 
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.costProd.DefaultCellStyle = dataGridViewCellStyle4;
-            this.costProd.HeaderText = "Costo Producción ($)";
-            this.costProd.Name = "costProd";
-            this.costProd.ReadOnly = true;
-            // 
-            // costTotal
-            // 
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.costTotal.DefaultCellStyle = dataGridViewCellStyle5;
-            this.costTotal.HeaderText = "Costo Total ($)";
-            this.costTotal.Name = "costTotal";
-            this.costTotal.ReadOnly = true;
-            // 
-            // costAcum
-            // 
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.costAcum.DefaultCellStyle = dataGridViewCellStyle6;
-            this.costAcum.HeaderText = "Costo Acumulado ($)";
-            this.costAcum.Name = "costAcum";
-            this.costAcum.ReadOnly = true;
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.ForeColor = System.Drawing.Color.Black;
+            this.btn_salir.Location = new System.Drawing.Point(894, 661);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(75, 23);
+            this.btn_salir.TabIndex = 15;
+            this.btn_salir.Text = "SALIR";
+            this.btn_salir.UseVisualStyleBackColor = true;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 696);
+            this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_desde);
@@ -751,6 +765,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn costTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn costAcum;
+        private System.Windows.Forms.Button btn_salir;
     }
 }
 

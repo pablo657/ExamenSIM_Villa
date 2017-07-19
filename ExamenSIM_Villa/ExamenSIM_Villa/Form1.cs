@@ -35,21 +35,35 @@ namespace ExamenSIM_Villa
 
         private void btn_simular_Click(object sender, EventArgs e)
         {
-          
-            validar();
-            cantidadAProducir = long.Parse( txt_cant_prod.Text);
-            costoArreglar  = double.Parse(txt_Costo_reparacion.Text);
-            aniosGarantia = int.Parse(txt_garantia.Text);
-            vidaPol1 = int.Parse(txt_prom_vida_pol_1.Text);
-            vidaPol2 = int.Parse(txt_prom_vida_pol_2.Text);
-            vidaPol3 = int.Parse(txt_prom_vida_pol_3.Text);
-          
-            Simular(grilla_1,cantidadAProducir,costoArreglar,aniosGarantia,vidaPol1 );
-            Simular(grilla_2, cantidadAProducir, costoArreglar, aniosGarantia, vidaPol2);
-            Simular(grilla_3, cantidadAProducir, costoArreglar, aniosGarantia, vidaPol3);
 
-            btn_simular.Enabled = false;
-            ObtenerMejorPolitica();
+           
+            if (validar () )
+            {
+                if (int.Parse(txt_desde.Text) >= int.Parse(txt_hasta.Text))
+                {
+                    MessageBox.Show("La fila desde no puede ser mayor a la fila hasta");
+                    return;
+                }
+                if (int.Parse(txt_hasta.Text) <= int.Parse(txt_desde.Text))
+                {
+                    MessageBox.Show("La fila hasta no puede ser menor a la fila desde");
+                    return;
+                }
+
+                cantidadAProducir = long.Parse(txt_cant_prod.Text);
+                costoArreglar = double.Parse(txt_Costo_reparacion.Text);
+                aniosGarantia = int.Parse(txt_garantia.Text);
+                vidaPol1 = int.Parse(txt_prom_vida_pol_1.Text);
+                vidaPol2 = int.Parse(txt_prom_vida_pol_2.Text);
+                vidaPol3 = int.Parse(txt_prom_vida_pol_3.Text);
+
+                Simular(grilla_1, cantidadAProducir, costoArreglar, aniosGarantia, vidaPol1);
+                Simular(grilla_2, cantidadAProducir, costoArreglar, aniosGarantia, vidaPol2);
+                Simular(grilla_3, cantidadAProducir, costoArreglar, aniosGarantia, vidaPol3);
+
+                btn_simular.Enabled = false;
+                ObtenerMejorPolitica(); 
+            }
           
 
         }
@@ -134,11 +148,16 @@ namespace ExamenSIM_Villa
                 }
             }
         }
-        public void validar()
+        public Boolean  validar()
         {
-            if (txt_cant_prod.Text == "" || txt_Costo_reparacion.Text =="" || txt_garantia.Text==""||txt_prom_vida_pol_1.Text==""||txt_prom_vida_pol_2.Text==""||txt_prom_vida_pol_3.Text=="")
+            if (txt_cant_prod.Text == "" || txt_Costo_reparacion.Text =="" || txt_garantia.Text==""||txt_prom_vida_pol_1.Text==""||txt_prom_vida_pol_2.Text==""||txt_prom_vida_pol_3.Text==""|| txt_hasta.Text=="" || txt_desde.Text == "")
             {
                 MessageBox.Show("Complete todos los campos");
+                return false;
+            }
+            else
+            {
+                return true;
             }
 
         }
@@ -233,23 +252,29 @@ namespace ExamenSIM_Villa
 
             if (txt_cant_prod.Text != "")
             {
-                if (int.Parse(txt_hasta.Text) <= int.Parse(txt_cant_prod.Text))
+                if (txt_hasta.Text != "")
                 {
-                    if (txt_cant_prod.Text != "" && int.Parse(txt_hasta.Text) > 5)
+                    if (int.Parse(txt_hasta.Text) <= int.Parse(txt_cant_prod.Text))
                     {
-                        int res = int.Parse(txt_hasta.Text) - 5;
-                        txt_desde.Text = res.ToString();
+                        if (txt_cant_prod.Text != "" && int.Parse(txt_hasta.Text) > 5)
+                        {
+                            int res = int.Parse(txt_hasta.Text) - 5;
+                            txt_desde.Text = res.ToString();
+                        }
+                        else
+                        {
+                            txt_desde.Text = "1";
+                        }
                     }
                     else
                     {
-                        txt_desde.Text = "1";
+                        MessageBox.Show("no puede ser mayor que la cantidad a producir");
+                        txt_hasta.Text = txt_cant_prod.Text;
+
                     }
                 }
-                else
-                {
-                    MessageBox.Show("no puede ser mayor que la cantidad a producir");
-                    txt_hasta.Text = txt_cant_prod.Text;
-
+                else {
+                    MessageBox.Show("ingrese valor");
                 }
 
             }
@@ -300,6 +325,11 @@ namespace ExamenSIM_Villa
             lbl_mejor_politica.Text = "";
             txt_Resultado.Text = "";
             btn_simular.Enabled = true;
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
