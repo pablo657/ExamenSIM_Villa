@@ -27,7 +27,7 @@ namespace ExamenSIM_Villa
         double costo_pol_1;
         double costo_pol_2;
         double costo_pol_3;
-
+        Random rand = new Random();
         public Form1()
         {
             InitializeComponent();
@@ -93,7 +93,7 @@ namespace ExamenSIM_Villa
             double costoReparacion =0.00;
             double costoProducir= CalculoCosto.calcularCosto(promVida);
             double tiempoFalla;
-            Random  rdn = new Random ();
+            //Random  rdn = new Random ();
             double randomActual;
             double costoTotal;
             double costoAcumulado=0.00;
@@ -103,7 +103,7 @@ namespace ExamenSIM_Villa
             {
                     cont++;
                 String tieneGarantia = "";
-                randomActual= rdn.NextDouble();
+                randomActual= rand.NextDouble();
                 tiempoFalla = Distribuciones.Exponencial(promVida, randomActual);
                 
 

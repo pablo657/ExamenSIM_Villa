@@ -8,6 +8,7 @@ namespace ExamenSIM_Villa
 {
     class Distribuciones
     {
+
         public static double Exponencial(int m, double rdn)
         {
             return (double)Math.Log(1-rdn )*(-m);
